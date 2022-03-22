@@ -1,11 +1,20 @@
-import "../node_modules/antd/dist/antd.css";
-import { Button } from "antd";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbr from "./components/Navbr";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Contact from "./components/Contact";
 function App() {
   return (
     <>
-      <h1>this is my page</h1>
-      <p>sdfd</p>
-      <Button type="primary">Button</Button>
+      <Navbr />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </>
   );
 }
